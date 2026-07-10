@@ -3,8 +3,9 @@
     android:shape="rectangle">
     <corners android:radius="20dp" />
     <solid android:color="#9DF0EF" />
-    <!-- Warna diambil dari --pc tema "teal" (default) di index.html.
-         Jika ingin widget mengikuti tema aktif user, perlu dibuat versi
-         night (res/drawable-night/widget_background.xml) dengan warna
-         dari palet [data-t=dark] --pc:#004F4F. -->
+    <!-- Warna diambil dari variabel pc (primary container) tema "teal"
+         (default) di index.html. Jika ingin widget mengikuti tema aktif
+         user, perlu dibuat versi night (res/drawable-night/widget_background.xml)
+         dengan warna dari palet dark: pc:#004F4F. -->
 </shape>
+
