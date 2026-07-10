@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+      Hanya folder cache/exports/ yang di-expose ke luar (dipakai oleh
+      NativeStorageBridge.exportFile()). Folder data internal utama
+      (noteflow_data.json) SENGAJA tidak dimasukkan di sini supaya
+      tidak bisa diakses app lain lewat FileProvider.
+    -->
+    <cache-path name="exports" path="exports/" />
+</paths>

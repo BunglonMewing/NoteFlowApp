@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.noteflow.app">
+
+    <!-- Dibutuhkan untuk fitur AI Chat (fetch ke AI_API) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!--
+      Catatan: kita TIDAK memakai READ/WRITE_EXTERNAL_STORAGE.
+      Backup "SD" memakai getExternalFilesDir() (app-specific storage)
+      yang tidak butuh izin runtime di Android 10+ (scoped storage).
+      Lihat NativeStorageBridge.kt untuk detail.
+    -->
+
+    <application
+        android:name=".NoteFlowApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:hardwareAccelerated="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/Theme.NoteFlow"
+        tools:targetApi="34">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|screenSize|keyboardHidden|uiMode"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.NoteFlow.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+          FileProvider untuk fitur export (Simpan ke File HP / Ekspor HTML /
+          Ekspor CSV). Dipakai NativeStorageBridge.exportFile() supaya bisa
+          membuka Share/Save sheet Android dengan content:// URI yang aman,
+          tanpa perlu izin READ/WRITE_EXTERNAL_STORAGE.
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!--
+          WIDGET home-screen: implementasi di
+          NoteFlowWidgetProvider.kt + res/layout/widget_note.xml +
+          res/xml/widget_info.xml (lihat batch 2).
+        -->
+        <receiver
+            android:name=".widget.NoteFlowWidgetProvider"
+            android:exported="false"
+            android:label="@string/widget_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
+
+    </application>
+
+</manifest>

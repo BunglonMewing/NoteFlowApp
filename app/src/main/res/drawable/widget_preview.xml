@@ -1,0 +1,25 @@
+<!--
+  CATATAN UNTUK KLIEN:
+  Ini placeholder sederhana (kotak + garis) supaya project bisa langsung
+  di-build tanpa error resource-not-found. Untuk hasil terbaik di widget
+  picker Android, sebaiknya ganti file ini dengan screenshot PNG asli
+  tampilan widget (res/drawable/widget_preview.png, hapus versi .xml ini).
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="180dp"
+    android:height="110dp"
+    android:viewportWidth="180"
+    android:viewportHeight="110">
+    <path
+        android:pathData="M0,0h180v110h-180z"
+        android:fillColor="#9DF0EF" />
+    <path
+        android:pathData="M14,30h100v10h-100z"
+        android:fillColor="#002020" />
+    <path
+        android:pathData="M14,50h150v6h-150z"
+        android:fillColor="#3F4949" />
+    <path
+        android:pathData="M14,62h130v6h-130z"
+        android:fillColor="#3F4949" />
+</vector>

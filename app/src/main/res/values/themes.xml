@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme -->
+    <style name="Theme.NoteFlow" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">@color/nf_primary</item>
+        <item name="colorPrimaryVariant">@color/nf_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/nf_primary_container</item>
+        <item name="colorSecondaryVariant">@color/nf_primary_container</item>
+        <item name="colorOnSecondary">@color/nf_on_primary_container</item>
+        <item name="android:colorBackground">@color/nf_background</item>
+        <item name="android:statusBarColor">@color/nf_background</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="android:navigationBarColor">@color/nf_background</item>
+    </style>
+
+    <!--
+      Dipakai MainActivity: full-screen tanpa ActionBar bawaan Android,
+      karena index.html sudah punya top-bar sendiri (.tbar) di dalam WebView.
+    -->
+    <style name="Theme.NoteFlow.NoActionBar" parent="Theme.NoteFlow">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+</resources>

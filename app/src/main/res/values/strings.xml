@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NoteFlow</string>
+
+    <string name="widget_label">NoteFlow — Catatan Terbaru</string>
+    <string name="widget_description">Menampilkan catatan terbaru kamu langsung di layar utama.</string>
+    <string name="widget_untitled">Tanpa Judul</string>
+    <string name="widget_empty_title">Belum ada catatan</string>
+    <string name="widget_empty_body">Buka NoteFlow dan mulai menulis catatan pertamamu ✏️</string>
+</resources>

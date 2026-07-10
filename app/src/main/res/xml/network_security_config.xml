@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--
+      Default: SEMUA traffic wajib HTTPS (cleartext ditolak) — best practice
+      untuk app produksi. index.html memanggil AI_API lewat fetch(), yang
+      otomatis tunduk ke policy ini karena WebView berjalan di process app.
+    -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!--
+      Domain AI API dari index.html (const AI_API). Didaftarkan eksplisit
+      supaya jelas domain mana yang memang dituju app ini, dan gampang
+      di-audit klien. Ganti/tambah <domain> di sini kalau AI_API pindah host.
+    -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">zoyanz-api.vercel.app</domain>
+    </domain-config>
+</network-security-config>
