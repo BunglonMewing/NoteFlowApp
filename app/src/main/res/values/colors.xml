@@ -4,11 +4,11 @@
       Warna berikut diselaraskan dengan variabel CSS tema "teal" (default)
       pada :root di index.html, supaya elemen native Android (status bar,
       splash, widget) tidak "belang" dengan WebView-nya:
-        --p   : #006A6A  (primary)
-        --pc  : #9DF0EF  (primary container)
-        --opc : #002020  (on primary container)
-        --bg  : #F4FBFB  (background)
-        --err : #BA1A1A  (error)
+        -p   : #006A6A  (primary)
+        -pc  : #9DF0EF  (primary container)
+        -opc : #002020  (on primary container)
+        -bg  : #F4FBFB  (background)
+        -err : #BA1A1A  (error)
     -->
     <color name="nf_primary">#006A6A</color>
     <color name="nf_primary_container">#9DF0EF</color>
